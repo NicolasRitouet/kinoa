@@ -41,7 +41,7 @@ angular.module('KinoaApp')
         CompaniesService.getCompany(companyId, $scope.currentUser.id).then(function(data) {
             $log.log("Societe chargée: ", data);
             $scope.societe = data;
-            $scope.societe.statusToDisplay = EnumService.getCompanyStatus(data.status).french;
+            if (data.status) $scope.societe.statusToDisplay = EnumService.getCompanyStatus(data.status).french;
             delete $scope.loading;
         }, function(err) {
             $log.log(err);

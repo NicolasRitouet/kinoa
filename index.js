@@ -1,4 +1,3 @@
-// staging.js
 var deployd = require('deployd'),
     os = require('os');
 

@@ -7,12 +7,25 @@ Kinoa is a CRM for tax management companies.
 
 Local use
 -----------
+Deployd is required to make it run, you can install the binaries here:
+http://deployd.com/
+It will install deployd globally with an embedded MongoDB.
 
 ````bash
 git clone https://github.com/NicolasRitouet/kinoa.git
 cd kinoa
 npm install
-dpd -o
+dpd -d # Opens the dashboard to add a user
+````
+To increase the log level, use this command:
+````
+DEBUG=* dpd -o
+````
+
+
+You can also use the nodeJS script index.js to start the application, but you'll need a mongoDB running with a kinoa db.
+````
+node .
 ````
 
 Deployement on a VPS
@@ -32,7 +45,7 @@ This is going to install:
 	- NodeJS (latest stable)
     	- Set the folder node_modules in $HOME
 		- Add node_modules binaries folder to $PATH
-	- [install nginx](https://bitbucket.org/NicolasRTT/kinoa/src/2a5705cc89799f341416db008c4aaafa26ec10fd/vps-install.sh?at=master#cl-104) and create a config file for kinoa (adapt for hostname)
+	- [install nginx](https://github.com/NicolasRitouet/kinoa/blob/master/scripts/vps-install.sh#L107) and create a config file for kinoa (adapt for hostname)
     - install deployd global
 	- install pm2 global
     
@@ -61,7 +74,7 @@ pm2 start index.js
 
 TODO
 ---
-- add tests !!!
+- internationalize Kinoa (because not everybody speaks french!)
+- add tests
 - add grunt (or gulps) support: minification and concatenation
 - make the CRM more generic (remove tax centers)
-- internationalize Kinoa
