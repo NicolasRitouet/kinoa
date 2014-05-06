@@ -3,7 +3,7 @@ Kinoa::CRM
 
 Description
 -----------
-Kinoa is a CRM for tax management companies.
+Kinoa is a CRM built with angularJS and Deployd.
 
 Local use
 -----------
