@@ -27,6 +27,7 @@ If you really don't want to install deployd, you can also start the application 
 npm install
 node .
 ````
+Open http://localhost:3000/dashboard to add a user and use the application.
 
 Deployement on a VPS
 -------------------
