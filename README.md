@@ -22,9 +22,9 @@ To increase the log level, use this command:
 DEBUG=* dpd -o
 ````
 
-
-You can also use the nodeJS script index.js to start the application, but you'll need a mongoDB running with a kinoa db.
+If you really don't want to install deployd, you can also start the application with nodeJS, but you'll need a running mongoDB with a kinoa DB:
 ````
+npm install
 node .
 ````
 
