@@ -1,0 +1,134 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close" data-dismiss="modal">&times;</button>
+            <h4>Gestion des contacts pour {{societe.name}}</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs" id="tabContacts" data-tabs="tabs">
+                <li class="active"><a href data-toggle="tab" data-target="#creerContact">Créer et associer un
+                    contact</a></li>
+                    <li><a href data-target="#associerContact" data-toggle="tab">Associer un contact existant</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active well" id="creerContact">
+                        <h2>Créer un nouveau contact</h2>
+
+                        <form name="createAssociateContactForm">
+
+                            <div class="row">
+                                <div class="form-group col-xs-2">
+                                    <label for="civility">Civilité</label>
+                                    <select ng-model="newcontact.civility" class="form-control" ng-options="civ.id as civ.name for civ in civilities">
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-5">
+                                    <label for="firstname">Prénom</label>
+                                    <input type="text" class="form-control" id="firstname" placeholder="Prénom ..."
+                                    ng-model="newcontact.firstname">
+                                </div>
+
+                                <div class="form-group col-xs-5">
+                                    <label for="lastname">Nom</label>
+                                    <input type="text" class="form-control" id="lastname" placeholder="Nom ..."
+                                    ng-model="newcontact.lastname">
+                                </div>
+                            </div>
+                            <!-- /row -->
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <label for="email">Email</label>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon">@</span>
+                                        <input type="email" class="form-control" id="email" placeholder="Email ..."
+                                        ng-model="newcontact.email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-xs-6">
+                                    <label for="company">Entreprise</label>
+                                    <input type="text" class="form-control" id="company" placeholder="Entreprise ..."
+                                    ng-model="newcontact.company">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="function">Fonction</label>
+                                    <input type="text" class="form-control" id="function" placeholder="Fonction ..."
+                                    ng-model="newcontact.function">
+                                </div>
+                            </div>
+                            <!-- /row -->
+                            <div class="row">
+                                <div class="form-group col-xs-6">
+                                    <label for="phone1">Téléphone 1</label>
+                                    <input type="text" class="form-control" id="phone1" data-mask="99-99-99-99-99"
+                                    placeholder="Telephone 1 ..." ng-model="newcontact.phone1">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="cellphone">Telephone portable</label>
+                                    <input type="text" class="form-control" id="cellphone" data-mask="99-99-99-99-99"
+                                    placeholder="Telephone portable ..." ng-model="newcontact.cellphone">
+                                </div>
+                            </div>
+                            <!-- /row -->
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <label for="comments">Commentaires</label>
+                                    <textarea class="form-control" rows="3" id="comments"
+                                    ng-model="newcontact.comments"></textarea>
+                                </div>
+                            </div>
+                            <!--/row-->
+
+                            <a href="#" class="btn btn-primary" ng-click="createAssociateContact(newcontact)"
+                            data-dismiss="modal">Créer et associer</a> - <a href="#" data-dismiss="modal">Annuler</a>
+                        </form>
+
+
+                    </div>
+                    <div class="tab-pane well" id="associerContact">
+
+                        <div class="row col-xs-12"><legend>Recherche</legend></div>
+
+                        <div class="row">
+                            <form class="form-inline" role="form">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" ng-model="searchQuery">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" ng-click="searchUnassociatedContacts(searchQuery)" ng-disabled="!searchQuery || searchQuery.length < 3">Rechercher</button>
+                                </div>
+                            </form>
+                        </div>
+                        <br />
+                        <span class="row">{{ unassociatedContacts.length }} résultats.</span>
+                        <table class="table table-bordered table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Société</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="contact in unassociatedContacts">
+                                    <td>{{contact.lastname}}</td>
+                                    <td>{{contact.firstname}}</td>
+                                    <td>{{contact.company | characters:10 }}</td>
+                                    <td>
+                                        <button class="btn" ng-click="associateContact(contact)">Associer</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

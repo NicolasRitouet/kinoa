@@ -1,0 +1,51 @@
+.form-signin {
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    #width: 400px;
+    height: 500px;
+}
+
+// tablet and below
+@media (max-width: 991px) {
+    #scrollfollow1 {
+        content: 'tablet';
+    }
+}
+// desktop and above
+@media (min-width: 992px) {
+    #scrollfollow1 {
+        content: 'desktop';
+    }
+}
+
+.scrollable {
+    overflow-y:auto;
+    height:90%;
+}
+
+#sidebar {
+    height:200px;
+}
+
+.list-group-condensed {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: #ffffff;
+    cursor: default;
+    border: 1px solid #dddddd;
+    border-bottom-color: transparent;
+    background-color: #428bca;
+}
+
+.sidebarList {
+    overflow:auto;
+}

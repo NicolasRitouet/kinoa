@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"message": {
+			"name": "message",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "message",
+			"order": 0
+		},
+		"cause": {
+			"name": "cause",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cause",
+			"order": 1
+		},
+		"creationDate": {
+			"name": "creationDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creationDate",
+			"order": 2
+		},
+		"errorUrl": {
+			"name": "errorUrl",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "errorUrl",
+			"order": 3
+		},
+		"exception": {
+			"name": "exception",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "exception",
+			"order": 4
+		}
+	}
+}

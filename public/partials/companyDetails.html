@@ -1,0 +1,176 @@
+<ng-header></ng-header>
+<div class="row row-offcanvas row-offcanvas-left">
+    <ng-sidebar activeTab="companies" selectedItem="{{societe.id}}"></ng-sidebar>
+
+    <div class="col-xs-12 col-sm-9">
+        <form>
+            <div class="row">
+                <h2>
+                    Entreprise "{{societe.name}}" - Statut "{{societe.statusToDisplay}}"
+                    <button type="button" class="btn btn-primary btn-sm"
+                            ng-show="_.isEmpty(societe.companytouser) || !societe.companytouser.vip"
+                            ng-click="changeCompanyVip(true, societe)">
+                        <span class="glyphicon glyphicon-star"></span> Définir important
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm active"
+                            ng-show="!_.isEmpty(societe.companytouser) && societe.companytouser.vip"
+                            ng-click="changeCompanyVip(false, societe)">
+                        <span class="glyphicon glyphicon-star"></span> important
+                    </button>
+
+                    <div class="btn-group pull-right" ng-show="currentUser.isAdmin()">
+                        <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-wrench"></span>
+                            Administration de cette entreprise <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href>Menu accessible uniquement aux administrateurs</a></li>
+                            <li><a href>Supprimer cette entreprise</a></li>
+                            <li><a href>Modifier les autorisations</a></li>
+                            <li><a href>Autre tache administrative</a></li>
+                        </ul>
+                    </div>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="alert alert-info alert-dismissable" ng-show="info">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Info!</strong> {{info}}
+                    </div>
+                    <div class="alert alert-info alert-dismissable" ng-show="loading">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <i class="fa fa-spinner fa-spin"></i> {{loading}}
+                    </div>
+                    <div class="alert alert-danger alert-dismissable" ng-show="error">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Erreur!</strong> {{error}}
+                    </div>
+                    <div class="alert alert-success" ng-repeat="todo in todos | filter:{status:1}">
+                        <button class="btn btn-default pull-right" data-dismiss="alert" ng-click="archiveTodo(todo)"><i
+                                class="glyphicon glyphicon-chevron-down"></i> Effectué
+                        </button>
+                        <strong>Date butoire:</strong> {{todo.dueDate | date:'dd/MM/yyyy'}} - <strong>Assigné:</strong>
+                        {{todo.assignedUser.firstname}} {{todo.assignedUser.lastname}}<br/>{{ todo.message }}
+                    </div>
+                    <button data-target="#modal-todos" class="btn btn-default" data-toggle="modal"
+                            ng-click="newtodo = {}" ng-hide="creation"><i class="fa fa-plus-circle"></i> Ajouter une
+                        tache
+                    </button>
+                    <br/>
+
+                    <!-- DEBUT TEXTAREA COMMENTAIRE -->
+                    <div class="row">
+                        <div class="control-group col-md-12">
+                            <label for="commentaires">Commentaires</label>
+                            <textarea rows="3" class="col-md-12" id="commentaires"
+                                      ng-model="societe.comments"></textarea>
+                        </div>
+                    </div>
+                    <!-- FIN TEXTAREA COMMENTAIRE -->
+                    <br/>
+                    <!-- DEBUT ONGLETS -->
+                </div>
+                <ul class="nav nav-tabs" id="tabDetails">
+                    <li class="active">
+                        <a href data-target="#informationsSociete" data-toggle="tab">Informations</a>
+                    </li>
+                    <li>
+                        <a href data-target="#contactsSociete" data-toggle="tab" ng-hide="creation">Contacts</a>
+                    </li>
+                    <li>
+                        <a href data-target="#taxes" data-toggle="tab" ng-hide="creation">Impots</a>
+                    </li>
+                    <li>
+                        <a href data-target="#documentsSociete" data-toggle="tab" ng-hide="creation">Documents</a>
+                    </li>
+                    <li>
+                        <a href data-target="#todoSociete" data-toggle="tab" ng-hide="creation">Tâches</a>
+                    </li>
+                    <li class="hide">
+                        <a href data-target="#suiviSociete" data-toggle="tab" ng-hide="creation">Suivi</a>
+                    </li>
+                </ul>
+                <!-- FIN ONGLETS -->
+
+
+                <!-- DEBUT INFORMATIONS SOCIETE -->
+                <div class="tab-content">
+                    <div class="tab-pane active well" id="informationsSociete"
+                         ng-include="'partials/companyDetails/ng-inc-tab-info.html'">
+                    </div>
+                    <!-- FIN INFORMATIONS SOCIETE -->
+
+
+                    <!-- BEGIN CONTACT TAB -->
+                    <div class="tab-pane well" id="contactsSociete"
+                         ng-include="'partials/companyDetails/ng-inc-tab-contact.html'">
+                    </div>
+                    <!-- END CONTACT TAB -->
+
+
+                    <!-- BEGIN TAXES TAB -->
+                    <div class="tab-pane well" id="taxes"
+                         ng-include="'partials/companyDetails/ng-inc-tab-taxes.html'">
+                    </div>
+                    <!-- END CONTACT TAB -->
+
+                    <!-- BEGIN DOCUMENTS TAB -->
+                    <div class="tab-pane well " id="documentsSociete"
+                         ng-include="'partials/companyDetails/ng-inc-tab-doc.html'">
+
+                    </div>
+                    <!-- END DOCUMENT TAB -->
+
+                    <!-- BEGIN HISTORIC TAB -->
+                    <div class="tab-pane well" id="todoSociete"
+                         ng-include="'partials/companyDetails/ng-inc-tab-todo.html'">
+                    </div>
+                    <!-- END HISTORIC TAB -->
+
+                    <!-- BEGIN FOLLOWING TAB -->
+                    <div class="tab-pane well" id="suiviSociete"
+                         ng-include="'partials/companyDetails/ng-inc-tab-following.html'">
+                    </div>
+                    <!-- END FOLLOWING TAB -->
+
+                    <!-- BEGIN MODAL HISTORY -->
+                    <div class="modal fade" role="dialog" id="modal-historique"
+                         ng-include="'partials/companyDetails/ng-inc-modal-historique.html'">
+                    </div>
+                    <!-- END MODAL HISTORY -->
+
+
+                    <!-- BEGIN MODAL CONTACTS -->
+                    <div class="modal fade" role="dialog" id="modal-contacts"
+                         ng-include="'partials/companyDetails/ng-inc-modal-contact.html'">
+                    </div>
+                    <!-- /.modal -->
+                    <!-- END MODAL CONTACTS -->
+
+
+                    <!-- BEGIN MODAL TAXES -->
+                    <div class="modal fade" role="dialog" id="modal-taxes"
+                         ng-include="'partials/companyDetails/ng-inc-modal-taxes.html'">
+                    </div>
+                    <!-- /.modal -->
+                    <!-- END MODAL TAXES -->
+
+
+                    <!-- BEGIN MODAL TODOS -->
+                    <div class="modal fade" role="dialog" id="modal-todos"
+                         ng-include="'partials/companyDetails/ng-inc-modal-todo.html'">
+                    </div>
+                    <!-- /.modal -->
+                    <!-- END MODAL TODOS -->
+
+
+                </div>
+                <!--/tab-content-->
+            </div>
+            <!--/row-->
+        </form>
+
+    </div>
+    <!--/col-xs-12 col-sm-9-->

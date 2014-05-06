@@ -1,0 +1,325 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"status": {
+			"name": "status",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "status",
+			"order": 1
+		},
+		"comments": {
+			"name": "comments",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "comments",
+			"order": 2
+		},
+		"address1": {
+			"name": "address1",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "address1",
+			"order": 3
+		},
+		"address2": {
+			"name": "address2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "address2",
+			"order": 4
+		},
+		"address3": {
+			"name": "address3",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "address3",
+			"order": 5
+		},
+		"postalCode": {
+			"name": "postalCode",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "postalCode",
+			"order": 6
+		},
+		"city": {
+			"name": "city",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "city",
+			"order": 7
+		},
+		"country": {
+			"name": "country",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "country",
+			"order": 8
+		},
+		"activity": {
+			"name": "activity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "activity",
+			"order": 9
+		},
+		"subActivity": {
+			"name": "subActivity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "subActivity",
+			"order": 10
+		},
+		"legalStatus": {
+			"name": "legalStatus",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "legalStatus",
+			"order": 11
+		},
+		"tfSum": {
+			"name": "tfSum",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "tfSum",
+			"order": 13
+		},
+		"cfeSum": {
+			"name": "cfeSum",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cfeSum",
+			"order": 14
+		},
+		"thSum": {
+			"name": "thSum",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "thSum",
+			"order": 15
+		},
+		"capacity": {
+			"name": "capacity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "capacity",
+			"order": 16
+		},
+		"capacityType": {
+			"name": "capacityType",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "capacityType",
+			"order": 17
+		},
+		"finess": {
+			"name": "finess",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "finess",
+			"order": 18
+		},
+		"siret": {
+			"name": "siret",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "siret",
+			"order": 19
+		},
+		"website": {
+			"name": "website",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "website",
+			"order": 20
+		},
+		"creationDate": {
+			"name": "creationDate",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "creationDate",
+			"order": 21
+		},
+		"parentCompanyId": {
+			"name": "parentCompanyId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "parentCompanyId",
+			"order": 22
+		},
+		"tel1": {
+			"name": "tel1",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "tel1",
+			"order": 23
+		},
+		"surface": {
+			"name": "surface",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "surface",
+			"order": 24
+		},
+		"lastModification": {
+			"name": "lastModification",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "lastModification",
+			"order": 25
+		},
+		"creatorId": {
+			"name": "creatorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creatorId",
+			"order": 26
+		},
+		"phone": {
+			"name": "phone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "phone",
+			"order": 27
+		},
+		"fax": {
+			"name": "fax",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fax",
+			"order": 28
+		},
+		"companytouser": {
+			"name": "companytouser",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "companytouser",
+			"order": 29
+		},
+		"civility": {
+			"name": "civility",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "civility",
+			"order": 30
+		},
+		"firstname": {
+			"name": "firstname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "firstname",
+			"order": 31
+		},
+		"lastname": {
+			"name": "lastname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "lastname",
+			"order": 32
+		},
+		"PSPH": {
+			"name": "PSPH",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "PSPH",
+			"order": 33
+		},
+		"followup": {
+			"name": "followup",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "followup",
+			"order": 34
+		},
+		"mg": {
+			"name": "mg",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mg",
+			"order": 35
+		},
+		"invoiceAmount": {
+			"name": "invoiceAmount",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "invoiceAmount",
+			"order": 36
+		},
+		"invoiceNumber": {
+			"name": "invoiceNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "invoiceNumber",
+			"order": 37
+		},
+		"invoicePaidOn": {
+			"name": "invoicePaidOn",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "invoicePaidOn",
+			"order": 38
+		},
+		"cdifOn": {
+			"name": "cdifOn",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "cdifOn",
+			"order": 39
+		},
+		"comparOn": {
+			"name": "comparOn",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "comparOn",
+			"order": 40
+		}
+	}
+}

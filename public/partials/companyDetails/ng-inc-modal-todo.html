@@ -1,0 +1,42 @@
+<form name="addTodoForm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4>Ajouter une tache pour {{societe.name}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <label for="message" class="control-label">Tache</label>
+                    <textarea id="message" class="col-md-9 form-control" name="message" placeholder="Message"
+                              ng-model="newtodo.message" required></textarea>
+                    <span ng-show="addTodoForm.message.$error.required">Merci de décrire la tache</span>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label for="assigned" class="control-label">Assigné à</label>
+                        <select id="assigned" class="form-control" name="assigned" ng-model="newtodo.assignedId"
+                                ng-options="user.id as user.username for user in users" required></select>
+                        <span ng-show="addTodoForm.assigned.$error.required">Merci de choisir un utilisateur</span>
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <label for="dueDate" class="control-label">Date butoire</label>
+                        <input type="text" id="dueDate" class="form-control" name="dueDate" ng-model="newtodo.dueDate"
+                               required datepicker-popup="dd MMMM yyyy" show-weeks="false" show-button-bar="false" />
+                        <span ng-show="addTodoForm.dueDate.$error.required">Merci de choisir une date</span>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-primary" ng-click="addTodo(newtodo)" data-dismiss="modal"
+                   ng-disabled="addTodoForm.$invalid">Créer cette tache</a> - <a href="#"
+                                                                                 data-dismiss="modal">Annuler</a>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</form>

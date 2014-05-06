@@ -1,0 +1,12 @@
+<ng-header></ng-header>
+<div class="container">
+    <div class="alert alert-danger" ng-show="error">{{error}}</div>
+    <div class="alert alert-info" ng-show="loading"><i class="fa fa-spinner fa-spin"></i> {{loading}}</div>
+    <form class="form-signin" name="signinForm" novalidate>
+        <h2 class="form-signin-heading">Merci de vous connecter</h2>
+        <input type="text" class="form-control" placeholder="Votre email" required autofocus ng-model="user.email">
+        <input type="password" class="form-control" placeholder="Votre mot de passe" required ng-model="user.passwd">
+        <button class="btn btn-lg btn-primary btn-block" ng-click="login()" ng-disabled="loading">	<i class="fa fa-spinner fa-spin" ng-show="loading"></i> Connexion
+        </button>
+    </form>
+</div>

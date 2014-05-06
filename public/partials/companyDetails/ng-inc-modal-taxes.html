@@ -1,0 +1,117 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close" data-dismiss="modal">&times;</button>
+            <h4>Gestion des contacts pour {{societe.name}}</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs" id="tabTaxes" data-tabs="tabs">
+                <li><a href data-toggle="tab" data-target="#createTaxe">Créer et associer un
+                    centre d'impot</a></li>
+                <li class="active"><a href data-target="#associerTaxe" data-toggle="tab">Associer un centre d'impot existant</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane well" id="createTaxe">
+                    <h2>Créer un nouveau centre d'impot</h2>
+
+                    <form id="contactFormCreateTaxe">
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="firstname">Nom</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nom ..."
+                                       ng-model="newtaxe.name">
+                            </div>
+                        </div>
+                        <!-- /row -->
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="address">Adresse</label>
+
+                                <input type="text" class="form-control" id="address" placeholder="Adresse ..."
+                                       ng-model="newtaxe.address"><br/>
+                                <input type="text" id="address2" class="form-control col-md-9" placeholder="Adresse (suite)"
+                                       ng-model="newtaxe.address2">
+                            </div>
+                        </div>
+                        <!-- /row -->
+                        <div class="row">
+                            <div class="form-group col-xs-3">
+                                <label for="postalCode">Code postal</label>
+
+                                <input type="text" class="form-control" id="postalCode" placeholder="Code postal ..."
+                                       ng-model="newtaxe.postalCode">
+                            </div>
+                            <div class="form-group col-xs-5">
+                                <label for="city">Ville</label>
+                                <input type="text" class="form-control" id="city" placeholder="Ville ..."
+                                       ng-model="newtaxe.city">
+                            </div>
+                            <div class="form-group col-xs-4">
+                                <label for="country">Pays</label>
+                                <select id="country" class="form-control" ng-model="newtaxe.country"
+                                        ng-options="country.iso as country.name for country in countryList">
+                                    <option value="">Choisissez un pays</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- /row -->
+                        <div class="row">
+                            <div class="form-group col-xs-4">
+                                <label for="phone1">Telephone 1</label>
+
+                                <input type="text" class="form-control" id="phone1" data-mask="99-99-99-99-99" placeholder="Telephone 1 ..."
+                                       ng-model="newtaxe.phone1">
+                            </div>
+                            <div class="form-group col-xs-4">
+                                <label for="phone2">Telephone 1</label>
+                                <input type="text" class="form-control" id="phone2" data-mask="99-99-99-99-99" placeholder="Telephone 2 ..."
+                                       ng-model="newtaxe.phone2">
+                            </div>
+                            <div class="form-group col-xs-4">
+                                <label for="fax">Fax</label>
+                                <input type="text" class="form-control" id="fax" data-mask="99-99-99-99-99" placeholder="Fax ..."
+                                       ng-model="newtaxe.fax">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="comments">Commentaires</label>
+                                <textarea class="form-control" rows="3" id="comments"
+                                          ng-model="newtaxe.comments"></textarea>
+                            </div>
+                        </div>
+                        <!-- /row -->
+
+                        <a href="#" class="btn btn-primary" ng-click="createAssociateTaxe(newtaxe)"
+                           data-dismiss="modal">Créer et associer</a> - <a href="#" data-dismiss="modal">Annuler</a>
+                    </form>
+
+
+                </div>
+                <div class="tab-pane well active" id="associerTaxe">
+                    Filtre de recherche <input type="text" ng-model="taxeSearchFilter"/>
+                    <table class="table table-bordered table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="taxe in unassociatedTaxes | filter:taxeSearchFilter">
+                                <td>{{taxe.name}}</td>
+                                <td>
+                                    <button class="btn" ng-click="associateTaxe(taxe)">Associer</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

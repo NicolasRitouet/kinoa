@@ -1,0 +1,77 @@
+{
+	"type": "Collection",
+	"properties": {
+		"companyId": {
+			"name": "companyId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "companyId",
+			"order": 0
+		},
+		"userId": {
+			"name": "userId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "userId",
+			"order": 1
+		},
+		"creatorId": {
+			"name": "creatorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creatorId",
+			"order": 2
+		},
+		"rightsLevel": {
+			"name": "rightsLevel",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "rightsLevel",
+			"order": 3
+		},
+		"creationDate": {
+			"name": "creationDate",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "creationDate",
+			"order": 4
+		},
+		"lastModification": {
+			"name": "lastModification",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "lastModification",
+			"order": 5
+		},
+		"vip": {
+			"name": "vip",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "vip",
+			"order": 6
+		},
+		"user": {
+			"name": "user",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "user",
+			"order": 7
+		},
+		"company": {
+			"name": "company",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "company",
+			"order": 8
+		}
+	}
+}

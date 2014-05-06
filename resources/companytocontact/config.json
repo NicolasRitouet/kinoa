@@ -1,0 +1,53 @@
+{
+	"type": "Collection",
+	"properties": {
+		"companyId": {
+			"name": "companyId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "companyId",
+			"order": 0
+		},
+		"contactId": {
+			"name": "contactId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "contactId",
+			"order": 1
+		},
+		"creatorId": {
+			"name": "creatorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creatorId",
+			"order": 2
+		},
+		"lastModification": {
+			"name": "lastModification",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "lastModification",
+			"order": 3
+		},
+		"creationDate": {
+			"name": "creationDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creationDate",
+			"order": 4
+		},
+		"company": {
+			"name": "company",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "company",
+			"order": 5
+		}
+	}
+}

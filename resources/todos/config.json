@@ -1,0 +1,93 @@
+{
+	"type": "Collection",
+	"properties": {
+		"companyId": {
+			"name": "companyId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "companyId",
+			"order": 0
+		},
+		"message": {
+			"name": "message",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "message",
+			"order": 1
+		},
+		"creationDate": {
+			"name": "creationDate",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "creationDate",
+			"order": 2
+		},
+		"dueDate": {
+			"name": "dueDate",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "dueDate",
+			"order": 3
+		},
+		"status": {
+			"name": "status",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "status",
+			"order": 4
+		},
+		"creatorId": {
+			"name": "creatorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creatorId",
+			"order": 5
+		},
+		"lastModification": {
+			"name": "lastModification",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "lastModification",
+			"order": 6
+		},
+		"assignedId": {
+			"name": "assignedId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "assignedId",
+			"order": 7
+		},
+		"user": {
+			"name": "user",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "user",
+			"order": 8
+		},
+		"company": {
+			"name": "company",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "company",
+			"order": 9
+		},
+		"creator": {
+			"name": "creator",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "creator",
+			"order": 10
+		}
+	}
+}

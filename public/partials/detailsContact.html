@@ -1,0 +1,133 @@
+<ng-header></ng-header>
+<div class="row row-offcanvas row-offcanvas-left">
+    <ng-sidebar activeTab="contacts" selectedItem="{{contact.id}}"></ng-sidebar>
+
+
+    <div class="col-xs-12 col-sm-9">
+        <div class="alert alert-info alert-dismissable" ng-show="info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Info!</strong> {{info}}
+        </div>
+        <div class="alert alert-danger alert-dismissable" ng-show="error">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Erreur!</strong> {{error}}
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Détails pour {{contact.firstname}} {{contact.lastname}}</h3>
+            </div>
+            <div class="panel-body">
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="form-group col-xs-2">
+                            <label for="civility">Civilité</label>
+                            <select ng-model="contact.civility" class="form-control" ng-options="civ.id as civ.name for civ in civilities">
+                            </select>
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="firstname">Prénom</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="Prénom ..."
+                                   ng-model="contact.firstname">
+                        </div>
+
+                        <div class="form-group col-xs-4">
+                            <label for="lastname">Nom</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Nom ..."
+                                   ng-model="contact.lastname">
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row">
+                        <div class="form-group col-xs-4">
+                            <label for="email">Email</label>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="email" class="form-control" id="email" placeholder="Email ..."
+                                       ng-model="contact.email">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="company">Entreprise</label>
+                            <input type="text" class="form-control" id="company" placeholder="Entreprise ..."
+                                   ng-model="contact.company">
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="function">Fonction</label>
+                            <input type="text" class="form-control" id="function" placeholder="Fonction ..."
+                                   ng-model="contact.function">
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row">
+                        <div class="form-group col-xs-3">
+                            <label for="phone1">Téléphone 1</label>
+                            <input type="text" class="form-control" id="phone1" data-mask="99-99-99-99-99"
+                                   placeholder="Telephone 1 ..." ng-model="contact.phone1">
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <label for="phone2">Téléphone 2</label>
+                            <input type="text" class="form-control" id="phone2" data-mask="99-99-99-99-99"
+                                   placeholder="Telephone 2 ..." ng-model="contact.phone2">
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <label for="cellphone">Telephone portable</label>
+                            <input type="text" class="form-control" id="cellphone" data-mask="99-99-99-99-99"
+                                   placeholder="Telephone portable ..." ng-model="contact.cellphone">
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <label for="fax">Fax</label>
+                            <input type="text" class="form-control" id="fax" data-mask="99-99-99-99-99"
+                                   placeholder="Fax ..." ng-model="contact.fax">
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label for="comments">Commentaires</label>
+                            <textarea class="form-control" rows="3" id="comments"
+                                      ng-model="contact.comments"></textarea>
+                        </div>
+                    </div>
+                    <!-- /row -->
+
+                    <div ng-hide="creation">
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="updateContact(contact)">
+                            Sauvegarder
+                        </button>
+                    </div>
+                    <div ng-show="creation">
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="createContact(contact)">Créer ce
+                            contact
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- /panel-body -->
+        </div>
+        <!-- /panel -->
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Entreprises associées</h3>
+            </div>
+            <div class="panel-body">
+                Liste des entreprises avec lesquelles {{contact.firstname}} {{contact.lastname}} est associé.
+            </div>
+            <table class="table table-condensed">
+                <tr>
+                    <th>Entreprise</th>
+                    <th>Tél</th>
+                </tr>
+                <tr ng-repeat="company in associatedCompanies">
+                    <td><a ng-show="company.companytouser[0].rightsLevel > 0" href ng-href="#/societes/{{company.id}}">{{company.name}}</a> <span ng-hide="company.companytouser[0].rightsLevel > 0">{{company.name}}</span></td>
+                    <td>{{company.phone}}</td>
+                </tr>
+            </table>
+        </div>
+        <!-- /panel -->
+
+    </div>
+    <!-- /col -->
+</div><!-- /row-offcanvas-->

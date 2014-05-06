@@ -1,0 +1,4 @@
+<select ng-model="row.status">
+        <option ng-repeat="status in companyStatusList" value="{{status.id}}" ng-selected="row.getProperty(col.field) === status.id">{{status.french}}</option>
+    </select>
+    <button class="btn btn-default btn-sm" ng-click="changeCompanyStatus(row.getProperty('companyId'), row.status)">Modifier</button>

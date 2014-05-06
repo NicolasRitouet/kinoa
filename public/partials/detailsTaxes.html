@@ -1,0 +1,132 @@
+<ng-header></ng-header>
+<div class="row row-offcanvas row-offcanvas-left">
+    <ng-sidebar activeTab="taxes" selectedItem="{{taxe.id}}"></ng-sidebar>
+
+
+    <div class="col-xs-12 col-sm-9">
+        <div class="alert alert-info alert-dismissable" ng-show="info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Info!</strong> {{info}}
+        </div>
+        <div class="alert alert-danger alert-dismissable" ng-show="error">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Erreur!</strong> {{error}}
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-eur fa-stack-1x"></i>
+                    </span> Centre d'impots - Détails pour {{taxe.name}}</h3>
+            </div>
+            <div class="panel-body">
+                <form id="contactFormCreateTaxe">
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+                            <label for="firstname">Nom</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nom ..."
+                                   ng-model="taxe.name">
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label for="address">
+                                Adresse
+                                <a href="https://maps.google.fr/maps?q={{ taxe.address }}%2C+{{ taxe.postalCode }}+{{ taxe.city }}+{{ taxe.country }}"
+                                   target="_blank">
+                                    <i class="fa fa-map-marker fa-2x"></i>
+                                </a></label>
+
+                            <input type="text" class="form-control" id="address" placeholder="Adresse ..."
+                                       ng-model="taxe.address"><br/>
+                            <input type="text" id="address2" class="form-control col-md-9" placeholder="Adresse (suite)"
+                                   ng-model="taxe.address2">
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row">
+                        <div class="form-group col-xs-2">
+                            <label for="postalCode">Code postal</label>
+
+                            <input type="text" class="form-control" id="postalCode" placeholder="Code postal ..."
+                                       ng-model="taxe.postalCode">
+                        </div>
+                        <div class="form-group col-xs-6">
+                            <label for="city">Ville</label>
+                            <input type="text" class="form-control" id="city" placeholder="Ville ..."
+                                   ng-model="taxe.city">
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="country">Pays</label>
+                            <select id="country" class="form-control col-xs-12 input-sm" ng-model="taxe.country"
+                                    ng-options="country.iso as country.name for country in countryList">
+                                <option value="">Choisissez un pays</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row">
+                        <div class="form-group col-xs-4">
+                            <label for="phone1">Telephone 1</label>
+
+                            <input type="text" class="form-control" id="phone1" data-mask="99-99-99-99-99" placeholder="Telephone 1 ..."
+                                       ng-model="taxe.phone1">
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="phone2">Telephone 1</label>
+                            <input type="text" class="form-control" id="phone2" data-mask="99-99-99-99-99" placeholder="Telephone 2 ..."
+                                   ng-model="taxe.phone2">
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="fax">Fax</label>
+                            <input type="text" class="form-control" id="fax" data-mask="99-99-99-99-99" placeholder="Fax ..."
+                                   ng-model="taxe.fax">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label for="comments">Commentaires</label>
+                            <textarea class="form-control" rows="3" id="comments"
+                                      ng-model="taxe.comments"></textarea>
+                        </div>
+                    </div>
+                    <!-- /row -->
+
+                    <div ng-hide="creation">
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="updateTaxe(taxe)">
+                            Sauvegarder
+                        </button>
+                    </div>
+                    <div ng-show="creation">
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="createTaxe(taxe)">Créer ce
+                            centre d'impots
+                        </button>
+                    </div>
+                </form>
+            </div><!-- /panel-body -->
+        </div><!--/panel -->
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Entreprises associées</h3>
+            </div>
+            <div class="panel-body">
+                Liste des entreprises avec lesquelles le centre d'import "{{taxe.name}}" est associé.
+            </div>
+            <table class="table table-condensed">
+                <tr>
+                    <th>Entreprise</th>
+                    <th>Tél</th>
+                </tr>
+                <tr ng-repeat="company in associatedCompanies">
+                    <td><a ng-show="company.companytouser[0].rightsLevel > 0" href ng-href="#/societes/{{company.id}}">{{company.name}}</a> <span ng-hide="company.companytouser[0].rightsLevel > 0">{{company.name}}</span></td>
+                    <td>{{company.phone}}</td>
+                </tr>
+            </table>
+        </div><!-- /panel -->
+</div><!--/col-xs-12-->
+    </div><!--/row-->

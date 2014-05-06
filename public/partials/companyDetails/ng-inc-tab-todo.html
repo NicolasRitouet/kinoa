@@ -1,0 +1,23 @@
+<h4>Tâches à faire</h4>
+<table class="table table-bordered table-condensed table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Assigné</th>
+            <th>Donneur d'ordre</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="todo in todos">
+            <td>{{todo.dueDate | date:'dd/MM/yyyy'}}</td>
+            <td><span ng-show="todo.status == 1">En cours</span><span ng-show="todo.status == 0">Archivée</span></td>
+            <td>{{todo.assignedUser.firstname}} {{todo.assignedUser.lastname}}</td>
+            <td>{{todo.creator.firstname}} {{todo.creator.lastname}}</td>
+            <td>{{ todo.message }}</td>
+            <td><button class="btn btn-default btn-sm" ng-click="archiveTodo(todo)" ng-show="todo.status == 1">Effectué</button> <button class="btn btn-default btn-sm hide" ng-click="archiveTodo(todo)" ng-show="todo.creatorId == currentUser.id">Modifier</button></td>
+        </tr>
+    </tbody>
+</table>

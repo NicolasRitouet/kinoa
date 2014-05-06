@@ -1,0 +1,24 @@
+<h4>Contacts associés</h4>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th><a href="" ng-click="predicate = 'lastname'; reverse=false">Nom</a></th>
+        <th><a href="" ng-click="predicate = 'firstname'; reverse=false">Prenom</a> </th>
+        <th>Société</th>
+        <th>Fonction</th>
+        <th>Téléphone</th>
+        <th>Email</th>
+        <th>Désassocier</th>
+    </tr>
+    <tr ng-repeat="contact in associatedContacts | orderBy:predicate:reverse">
+        <td><a href ng-href="#/contacts/{{contact.id}}">{{contact.lastname}}</a></td>
+        <td><a href ng-href="#/contacts/{{contact.id}}">{{contact.firstname}}</a></td>
+        <td>{{contact.company}}</td>
+        <td>{{contact.function}}</td>
+        <td>{{contact.phone1}}</td>
+        <td><a href="mailto:{{contact.email}}">{{contact.email}}</a></td>
+        <td>
+            <button class="btn btn-default" ng-click="desassociateContact(contact)" ng-show="canWrite">Désassocier</button>
+        </td>
+    </tr>
+</table>
+<button data-target="#modal-contacts" class="btn btn-default" data-toggle="modal" ng-show="canWrite">Associer un contact</button>   

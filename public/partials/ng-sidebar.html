@@ -1,0 +1,88 @@
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation" resize>
+    <div scrollfollow="0" id="scrollfollow1">
+        <ul class="nav nav-tabs" id="sidebarTab">
+            <li ng-class="{active: activeTab == 'companies'}"><a data-toggle="tab" href="void()" data-target="#societes">Societés</a>
+            </li>
+            <li ng-class="{active: activeTab == 'contacts'}"><a href="void()" data-target="#contacts" data-toggle="tab">Contacts</a>
+            </li>
+            <li ng-class="{active: activeTab == 'taxes'}">
+                <a href="void()" data-target="#centres" data-toggle="tab">Impots</a>
+            </li>
+        </ul>
+
+        <div class="tab-content scrollable">
+            <!-- Tab societe -->
+            <div ng-class="{'tab-pane active': activeTab == 'companies', 'tab-pane': activeTab != 'companies'}"
+                 id="societes">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p><strong>Recherche</strong></p>
+                        <div class="row">
+                            <form name="formSearchCompaniesSideBar" ng-submit="searchCompanies(filtreCompanies)">
+                               <input type="text" ng-model="filtreCompanies" id="filtreCompanies" class="col-xs-5" />
+                                <button type="submit" class="btn btn-xs btn-default" ng-disabled="!filtreCompanies || filtreCompanies.length < 3">Rechercher</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="list-group sidebarList">
+                        <span class="list-group-item list-group-condensed">{{ companyList.length }} résultats.</span>
+                        <a href="#/societes/{{company.id}}"
+                           ng-class="{'list-group-item list-group-condensed active': selectedItem == company.id, 'list-group-item list-group-condensed': selectedItem != company.id}"
+                           ng-repeat="company in companyList" >
+                            {{ company.name }}
+                        </a>
+                        <span ng-if="!filtreCompanies || filtreCompanies.length < 3">Merci de chercher avec au moins 3 caractères.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab contacts -->
+            <div ng-class="{'tab-pane active': activeTab == 'contacts', 'tab-pane': activeTab != 'contacts'}"
+                 id="contacts">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p><strong>Recherche</strong></p>
+                        <div class="row">
+                            <form>
+                                <input type="text" ng-model="filtreContacts" id="filtreContacts" class="col-xs-5" />
+                                <button ng-click="searchContacts(filtreContacts)" class="btn btn-xs btn-default" ng-disabled="!filtreContacts || filtreContacts.length < 3">Rechercher</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="list-group sidebarList">
+                        <span class="list-group-item list-group-condensed">{{ contactList.length }} résultats.</span>
+                        <a href="#/contacts/{{contact.id}}"
+                           ng-class="{'list-group-item list-group-condensed active': selectedItem == contact.id, 'list-group-item list-group-condensed': selectedItem != contact.id}"
+                           ng-repeat="contact in contactList">
+                            {{contact.lastname}} {{contact.firstname}} ({{contact.company}})
+                        </a>
+                        <span ng-if="!filtreContacts || filtreContacts.length < 3">Merci de chercher avec au moins 3 caractères.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab centres impots -->
+            <div ng-class="{'tab-pane active': activeTab == 'taxes', 'tab-pane': activeTab != 'taxes'}"
+                 id="centres">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p><strong>Recherche</strong></p>
+                        <div class="row">
+                            <input type="text" ng-model="filtreCentres" id="filtreCentres" class="col-xs-4" />
+                            <button class="btn btn-default btn-xs" ng-click="resetSearchCentres()" id="clear"><span
+                                    class="glyphicon glyphicon-remove"/></button>
+                        </div>
+                    </div>
+                    <div class="list-group sidebarList">
+                        <a href="#/centreimpots/{{taxe.id}}"
+                           ng-class="{'list-group-item list-group-condensed active': selectedItem == taxe.id, 'list-group-item list-group-condensed': selectedItem != taxe.id}"
+                           ng-repeat="taxe in listeTaxes | filter:filtreCentres">
+                            {{ taxe.name | characters:35 }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/tab-content-->
+    </div><!--/ng-scrollfollow -->
+</div><!--/sidebar-offcanvas-->

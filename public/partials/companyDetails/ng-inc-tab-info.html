@@ -1,0 +1,148 @@
+<form name="modifyCompanyForm">
+
+    <div class="row">
+        <div class="form-group col-xs-6">
+            <label for="followup" class="control-label">Suivi</label>
+            <input type="text" id="followup" class="form-control col-md-12 input-sm" placeholder="Suivi" ng-model="societe.followup">
+        </div>
+        <div class="form-group col-xs-6">
+            <label for="status" class="control-label">Statut</label>
+            <select ng-model="societe.status" ng-options="s.id as s.french for s in companyStatusList" class="form-control"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            <label for="name" class="control-label">Nom</label>
+            <input type="text" id="companyName" class="form-control col-md-12 input-sm" placeholder="Nom" ng-model="societe.name">
+        </div>
+        <div class="form-group col-xs-3">
+            <label for="phone" class="control-label">Téléphone</label>
+            <input type="text" id="phone" class="form-control col-md-12 input-sm" data-mask="99-99-99-99-99"
+                   placeholder="Téléphone" ng-model="societe.phone">
+        </div>
+        <div class="form-group col-xs-3">
+            <label for="fax" class="control-label">Fax</label>
+            <input type="text" id="fax" class="form-control col-md-12 input-sm" data-mask="99-99-99-99-99" placeholder="Fax"
+                   ng-model="societe.fax">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <label for="address" class="control-label">
+                Adresse
+                <a href="https://maps.google.fr/maps?q={{ societe.address1 }}%2C+{{ societe.address2 }}%2C+{{ societe.address3 }}%2C+{{ societe.postalCode }}+{{ societe.city }}+{{ societe.country }}"
+                   target="_blank">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                </a>
+            </label>
+            <input type="text" id="address1" class="form-control col-md-9 input-sm" placeholder="Adresse"
+                   ng-model="societe.address1"><br/>
+            <input type="text" id="address2" class="form-control col-md-9 input-sm" placeholder="Adresse (suite)"
+                   ng-model="societe.address2"><br/>
+            <input type="text" id="address3" class="form-control col-md-9 input-sm" placeholder="Adresse (suite)"
+                   ng-model="societe.address3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-2">
+            <label for="cp">Code postal</label>
+            <input type="text" id="cp" class="form-control col-xs-12 input-sm" ng-model="societe.postalCode">
+        </div>
+        <div class="form-group col-xs-5">
+            <label for="city">Ville</label>
+            <input type="text" name="city" id="city" class="form-control col-xs-12 input-sm" ng-model="societe.city">
+        </div>
+        <div class="form-group col-xs-5">
+            <label for="country">Pays</label>
+            <select id="country" class="form-control col-xs-12 input-sm" ng-model="societe.country"
+                    ng-options="country.iso as country.name for country in countryList">
+                <option value="">Choisissez un pays</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-4">
+            <label for="activity">Activité</label>
+            <input type="text" name="activity" id="activity" class="form-control col-xs-12 input-sm" ng-model="societe.activity">
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="subActivity">Sous activité</label>
+            <input type="text" name="subActivity" id="subActivity" class="form-control col-xs-12 input-sm"
+                   ng-model="societe.subActivity">
+        </div>
+        <div class="form-group col-xs-3">
+            <label for="legalStatus">Statut Juridique</label>
+            <input type="text" name="legalStatus" id="legalStatus" class="form-control col-xs-12 input-sm"
+                   ng-model="societe.legalStatus">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <label for="tfSum">Montant TF</label>
+            <input type="text" name="tfSum" id="tfSum" class="form-control col-xs-12 input-sm" ng-model="societe.tfSum">
+        </div>
+        <div class="form-group col-xs-3">
+            <label for="cfeSum">Montant CFE</label>
+            <input type="text" name="cfeSum" id="cfeSum" class="form-control col-xs-12 input-sm" ng-model="societe.cfeSum">
+        </div>
+        <div class="form-group col-xs-3">
+            <label for="thSum">Montant TH</label>
+            <input type="text" name="thSum" id="thSum" class="form-control col-xs-12 input-sm" ng-model="societe.thSum">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-4">
+            <label for="surface">Surface</label>
+            <input type="text" name="surface" id="surface" class="form-control col-xs-12 input-sm"
+                   ng-model="societe.surface">
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="capacity">Capacité</label>
+            <input type="text" name="capacity" id="capacity" class="form-control col-xs-12 input-sm" ng-model="societe.capacity">
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="capacityType">Type de capacité</label>
+            <select id="capaciteType" ng-model="societe.capacityType" class="form-control col-xs-12 input-sm">
+                <option>Lit</option>
+                <option>Chambre</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-2">
+            <label for="finess">N°Finess</label>
+            <input type="text" name="finess" id="finess" data-mask="99 9999999" class="form-control col-xs-12 input-sm"
+                   ng-model="societe.finess" placeholder="N° Finess">
+        </div>
+        <div class="form-group col-xs-3">
+            <label for="siret">N°Siret</label>
+            <input type="text" name="siret" id="siret" data-mask="999 999 999 99999" class="form-control col-xs-12 input-sm"
+                   ng-model="societe.siret" placeholder="N° Siret">
+        </div>
+        <div class="form-group col-xs-6">
+            <label for="website">Site internet</label>
+
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a href class="btn btn-default btn-sm" type="button" ng-href="{{societe.website}}" target="_blank">Go!</a>
+                </span>
+                <input type="url" name="website" id="website" class="form-control col-xs-12 input-sm" ng-model="societe.website"
+                       placeholder="Site Internet">
+            </div>
+            <span class="error" ng-show="modifyCompanyForm.website.$error.url">
+                Merci de saisir une adresse Internet valide !
+            </span>
+        </div>
+    </div>
+
+    <div ng-hide="creation">
+        <button class="btn btn-large btn-primary" type="button" ng-click="updateCompany(societe)" ng-show="canWrite">Sauvegarder</button>
+        <a href="#">Annuler et revenir</a>
+    </div>
+    <div ng-show="creation">
+        <button class="btn btn-large btn-primary" type="button" ng-click="createCompany(societe)">Créer cette société
+        </button>
+        <a href="#">Annuler et revenir</a>
+    </div>
+
+</form>

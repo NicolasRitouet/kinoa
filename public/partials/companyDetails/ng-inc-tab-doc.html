@@ -1,0 +1,28 @@
+<h4>Gestion des documents</h4>
+    <input type="file" name="upload" multiple
+           ng-model-instant id="fileToUpload"
+           onchange="angular.element(this).scope().setFiles(this)"><br>
+    <button class="btn btn-primary" ng-click="uploadMultipleFiles()" ng-hide="loading">Envoyer</button>
+    <div ng-show="loading"><h3><i class="fa fa-spinner fa-spin"></i> {{loading}}</h3></div>
+<h4>Liste des documents existants</h4>
+Filtre de recherche <input type="text"/>
+<table class="table table-bordered table-condensed table-striped">
+    <thead>
+    <tr>
+        <th><a href="" ng-click="predicate = 'filename'; reverse=false">Nom</a></th>
+        <th><a href="" ng-click="predicate = 'creationDate'; reverse=false">Date d'envoi</a></th>
+        <th>Créateur</th>
+        <th>Taille</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="uploadedFile in uploadedFiles | orderBy:predicate:reverse">
+        <td><a href="temp/{{uploadedFile.subdir}}/{{uploadedFile.filename}}" target="_blank">{{uploadedFile.filename}}</a></td>
+        <td>{{uploadedFile.creationDate | date:'dd/MM/yyyy'}}</td>
+        <td>{{uploadedFile.creator.firstname}} {{uploadedFile.creator.lastname}}</td>
+        <td>{{uploadedFile.filesize | bytes }}</td>
+        <td><a href ng-click="deleteUploadedFile(uploadedFile)" class="btn" ng-show="canWrite"><button class="btn btn-default btn-sm">Supprimer</button></a></td>
+    </tr>
+    </tbody>
+</table>

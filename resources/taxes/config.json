@@ -1,0 +1,85 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"address": {
+			"name": "address",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "address",
+			"order": 1
+		},
+		"address2": {
+			"name": "address2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "address2",
+			"order": 2
+		},
+		"postalCode": {
+			"name": "postalCode",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "postalCode",
+			"order": 3
+		},
+		"city": {
+			"name": "city",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "city",
+			"order": 4
+		},
+		"country": {
+			"name": "country",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "country",
+			"order": 5
+		},
+		"phone1": {
+			"name": "phone1",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "phone1",
+			"order": 6
+		},
+		"phone2": {
+			"name": "phone2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "phone2",
+			"order": 7
+		},
+		"fax": {
+			"name": "fax",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fax",
+			"order": 8
+		},
+		"comments": {
+			"name": "comments",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "comments",
+			"order": 9
+		}
+	}
+}

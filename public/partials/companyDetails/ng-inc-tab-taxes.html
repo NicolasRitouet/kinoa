@@ -1,0 +1,16 @@
+<h4>Centre d'impots associés</h4>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>Nom</th>
+        <th>Téléphone</th>
+        <th>Désassocier</th>
+    </tr>
+    <tr ng-repeat="taxe in associatedTaxes">
+        <td><a href ng-href="#/centreimpots/{{taxe.id}}">{{taxe.name}}</a></td>
+        <td>{{taxe.phone1}}</td>
+        <td>
+            <button class="btn btn-default" ng-click="desassociateTaxe(taxe)" ng-show="canWrite">Désassocier</button>
+        </td>
+    </tr>
+</table>
+<button data-target="#modal-taxes" class="btn btn-default" data-toggle="modal" ng-show="canWrite">Associer un centre d'impot</button>

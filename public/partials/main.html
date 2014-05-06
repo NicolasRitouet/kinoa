@@ -1,0 +1,56 @@
+    <ng-header></ng-header>
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <ng-sidebar activeTab="companies"></ng-sidebar>
+
+
+    <div class="col-xs-12 col-sm-9">
+
+        <div class="well col-xs-11">
+            <h3>Bienvenue {{user.firstname}} !<span class="pull-right">{{ currentDate | date:'dd/MM/yyyy - HH:mm' }}</span></h3>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-star"></i> Mes dossiers importants</div>
+
+                <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                    <tr>
+                        <th>Entreprise</th>
+                        <th>Commentaire</th>
+                        <th>Dernière modification</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="company in vipCompanies">
+                        <td><a href ng-href="#/societes/{{company.company.id}}">{{company.company.name}}</a></td>
+                        <td>{{company.company.comments}}</td>
+                        <td>{{company.company.lastModification | date:'dd/MM/yyyy'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div><!--/panel-->
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-tasks"></i> Taches à effectuer</div>
+                <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                    <tr>
+                        <th>Message</th>
+                        <th>Entreprise</th>
+                        <th>Date butoire</th>
+                        <th>Assigné à</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="todo in todos">
+                        <td>{{todo.message}}</a></td>
+                        <td><a ng-show="todo.company.companytouser[0].rightsLevel > 0" href ng-href="#/societes/{{todo.company.id}}">{{todo.company.name}}</a> <span ng-hide="todo.company.companytouser[0].rightsLevel > 0">{{todo.company.name}} </span></td>
+                        <td>{{todo.dueDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{todo.assignedUser.firstname}} {{todo.assignedUser.lastname}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div><!--/panel-->
+        </div><!--/well-->
+    </div><!--/col-xs-12 col-sm-9-->
+</div><!--/row-->

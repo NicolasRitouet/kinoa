@@ -1,0 +1,8 @@
+<div class="controls form-inline">
+    <select ng-model="row.status" class="col-xs-6">
+    	<option ng-repeat="status in companyStatusList" value="{{status.id}}" ng-selected="row.getProperty(col.field) === status.id">{{status.french}}</option>
+	</select>
+	<button class="btn btn-default btn-sm" ng-click="changeCompanyStatus(row.getProperty('id'), row.status)">
+		Modifier
+	</button>
+</div>

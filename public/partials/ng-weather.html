@@ -1,0 +1,7 @@
+<div>
+    <h2>Météo à {{city | capitalize }}</h2>
+
+    <div style="float:left"><img ng-src="{{ imgurl() }}"></div>
+    <h3>Actuellement: {{ weather.temp.current | temp:2 }}</h3>
+    min: {{ weather.temp.min | temp }}, max: {{ weather.temp.max | temp }}
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="KinoaApp">
+<head>
+    <meta charset="utf-8">
+    <title>Kinoa::CRM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/ng-grid.css">
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="lib/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+
+    <div ng-view></div>
+
+    <hr>
+    <div class="container">
+        <ng-footer></ng-footer>
+    </div>
+
+
+    <!-- Le javascript -->
+    <script src="lib/jquery.js"></script>
+    <script src="lib/lodash.js"></script>
+    <!-- Used for modal (detailsSociete) and tabs): -->
+    <script src="lib/bootstrap/bootstrap.js"></script>
+    <script src="lib/bootstrap/bootstrap-inputmask.js"></script>
+
+    <!-- The angular Core -->
+    <script src="lib/angular/angular.js"></script>
+
+    <!-- Angular libraries -->
+    <script src="lib/angular/angular-cookies.js"></script>
+    <script src="lib/angular/angular-underscore.js"></script>
+    <script src="lib/angular/angular-sanitize.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="lib/angular/angular-dpd.js"></script>
+    <script src="lib/angular/angular-locale_fr-fr.js"></script>
+    <!-- Used for modal (listeSociete) and datepicker: -->
+    <script src="lib/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="lib/angular/ng-grid.js"></script>
+    <script src="lib/angular/ng-grid-flexible-height.js"></script>
+
+
+    <!-- The application -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/MainCtrl.js"></script>
+    <script src="app/controllers/LoginCtrl.js"></script>
+    <script src="app/controllers/LogoutCtrl.js"></script>
+    <script src="app/controllers/CompanyDetailsCtrl.js"></script>
+    <script src="app/controllers/detailsContact.js"></script>
+    <script src="app/controllers/NewCompanyCtrl.js"></script>
+    <script src="app/controllers/CompanyListCtrl.js"></script>
+    <script src="app/controllers/NewContactCtrl.js"></script>
+    <script src="app/controllers/DetailsTaxesCtrl.js"></script>
+    <script src="app/controllers/NewTaxeCtrl.js"></script>
+    <script src="app/controllers/HelpCtrl.js"></script>
+    <script src="app/controllers/FollowupCtrl.js"></script>
+
+
+    <script src="app/directives/ng-footer.js"></script>
+    <script src="app/directives/ng-header.js"></script>
+    <script src="app/directives/ng-sidebar.js"></script>
+    <script src="app/directives/ng-scrollfollow.js"></script>
+    <script src="app/directives/ng-multiselect.js"></script>
+
+    <script src="app/services/EnumService.js"></script>
+    <script src="app/services/CountryService.js"></script>
+    <script src="app/services/WeatherService.js"></script>
+    <script src="app/services/AuthService.js"></script>
+    <script src="app/services/ContactsService.js"></script>
+    <script src="app/services/CompaniesService.js"></script>
+
+    <script src="app/filters/Filters.js"></script>
+
+    <!-- Google Analytics. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                    function () {
+                        (b[l].q = b[l].q || []).push(arguments)
+                    });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-46591333-1');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

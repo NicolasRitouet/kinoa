@@ -1,0 +1,53 @@
+{
+	"type": "UserCollection",
+	"properties": {
+		"roles": {
+			"name": "roles",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "roles",
+			"order": 0
+		},
+		"firstname": {
+			"name": "firstname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "firstname",
+			"order": 1
+		},
+		"lastname": {
+			"name": "lastname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "lastname",
+			"order": 2
+		},
+		"creatorId": {
+			"name": "creatorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creatorId",
+			"order": 3
+		},
+		"lastModification": {
+			"name": "lastModification",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "lastModification",
+			"order": 4
+		},
+		"creationDate": {
+			"name": "creationDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creationDate",
+			"order": 5
+		}
+	}
+}

@@ -1,0 +1,103 @@
+<ng-header></ng-header>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Liste des sociétés</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="alert alert-info alert-dismissable" ng-show="loading">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <i class="fa fa-spinner fa-spin"></i> {{loading}}
+        </div>
+        <div class="alert alert-danger alert-dismissable" ng-show="error">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Erreur!</strong> {{error}}
+        </div>
+        <div class="alert alert-info alert-dismissable" ng-show="info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Info!</strong> {{info}}
+        </div>
+        <h4>Filtres</h4>
+
+        <form ng-submit="search(filter)">
+            <div class="row">
+                <div class="col-lg-3">
+                    <label>Nom de la société</label>
+                    <div class="input-group custom-search-form">
+                        <input type="text" id="nametosearch" ng-model="filter.name" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="search(filter)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div>
+
+                <div class="col-lg-3">
+                    <label>Statut de la société</label>
+                    <div class="input-group">
+                        <select ng-model="filter.status" class="form-control col-xs-6" ng-options="status as status.french for status in companyStatusListFilter">
+                        </select>
+                    </div>
+                </div>
+            </div><!-- /row -->
+        </form>
+        <button class="btn btn-primary pull-right" ng-click="search(filter)">Filtrer</button>
+        <hr/>
+        <h4><a href ng-click="show = !show">Traitement par lot</a> <small>(cliquez pour afficher)</small></h4>
+        <form ng-show="show">
+            <div class="row">
+                <div class="col-xs-3">
+                    <label>Modifier le statut de toutes les sociétés de la sélection</label>
+                    <div class="input-group">
+                        <select ng-model="batch.status" class="form-control col-xs-6" ng-options="status as status.french for status in companyStatusList">
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <div class="input-group">
+                        <button class="btn btn-primary" ng-click="batchStatusUpdate(batch, companyList)">Modifier les status</button>
+                    </div>
+                </div>
+            </div><!-- /row -->
+            <div class="row">
+                <div class="col-xs-3">
+                    <label>Modifier les droits de toutes les sociétés de la sélection</label>
+                    <div class="input-group">
+                           <table class="table table-condensed">
+                                <tr>
+                                    <th>Utilisateur</th>
+                                    <th>Aucun droit</th>
+                                    <th>Droit de lecture</th>
+                                    <th>Droit d'ecriture</th>
+                                    <th>Droit d'administration</th>
+                                </tr>
+                                <tr ng-repeat="user in users">
+                                    <td>{{user.firstname}} {{user.lastname}}</td>
+                                    <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="0" /></td>
+                                    <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="1" /></td>
+                                    <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="2" /></td>
+                                    <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="3" /></td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <div class="input-group">
+                        <button class="btn btn-primary" ng-click="batchRightsUpdate(users, companyList)">Modifier les droits</button>
+                    </div>
+                </div>
+            </div><!-- /row -->
+        </form>
+        
+        <hr/>
+    </div>
+    <div ng-if="companyList.length === 500">Vous avez plus de 500 résultats, merci de filtrer votre requete.</div>
+    <div ng-show="!loading">{{companyList.length}} résultats.</div>
+
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+
+</div>

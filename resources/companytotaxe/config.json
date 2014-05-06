@@ -1,0 +1,61 @@
+{
+	"type": "Collection",
+	"properties": {
+		"taxeId": {
+			"name": "taxeId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "taxeId",
+			"order": 0
+		},
+		"companyId": {
+			"name": "companyId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "companyId",
+			"order": 1
+		},
+		"creationDate": {
+			"name": "creationDate",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "creationDate",
+			"order": 2
+		},
+		"lastModification": {
+			"name": "lastModification",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "lastModification",
+			"order": 3
+		},
+		"creatorId": {
+			"name": "creatorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "creatorId",
+			"order": 4
+		},
+		"taxe": {
+			"name": "taxe",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "taxe",
+			"order": 5
+		},
+		"company": {
+			"name": "company",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "company",
+			"order": 6
+		}
+	}
+}

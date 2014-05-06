@@ -1,0 +1,231 @@
+{
+
+    "type": "Collection",
+    "properties": {
+        "lastname": {
+            "name": "lastname",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "lastname",
+            "order": 0
+        },
+        "firstname": {
+            "name": "firstname",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "firstname",
+            "order": 1
+        },
+        "middlename": {
+            "name": "middlename",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "middlename",
+            "order": 2
+        },
+        "prefixname": {
+            "name": "prefixname",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "prefixname",
+            "order": 3
+        },
+        "phone1": {
+            "name": "phone1",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "phone1",
+            "order": 4
+        },
+        "phone2": {
+            "name": "phone2",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "phone2",
+            "order": 5
+        },
+        "cellphone": {
+            "name": "cellphone",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "cellphone",
+            "order": 6
+        },
+        "fax": {
+            "name": "fax",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "fax",
+            "order": 7
+        },
+        "function": {
+            "name": "function",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "function",
+            "order": 8
+        },
+        "email": {
+            "name": "email",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "email",
+            "order": 9
+        },
+        "creationDate": {
+            "name": "creationDate",
+            "type": "number",
+            "typeLabel": "number",
+            "required": false,
+            "id": "creationDate",
+            "order": 10
+        },
+        "comments": {
+            "name": "comments",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "comments",
+            "order": 11
+        },
+        "civility": {
+            "name": "civility",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "civility",
+            "order": 12
+        },
+        "company": {
+            "name": "company",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "company",
+            "order": 13
+        },
+        "lastModification": {
+            "name": "lastModification",
+            "type": "number",
+            "typeLabel": "number",
+            "required": false,
+            "id": "lastModification",
+            "order": 14
+        },
+        "creatorId": {
+            "name": "creatorId",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "creatorId",
+            "order": 15
+        },
+        "address1": {
+            "name": "address1",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "address1",
+            "order": 16
+        },
+        "address2": {
+            "name": "address2",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "address2",
+            "order": 17
+        },
+        "address3": {
+            "name": "address3",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "address3",
+            "order": 18
+        },
+        "postalCode": {
+            "name": "postalCode",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "postalCode",
+            "order": 19
+        },
+        "department": {
+            "name": "department",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "department",
+            "order": 20
+        },
+        "creationDateText": {
+            "name": "creationDateText",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "creationDateText",
+            "order": 21
+        },
+        "contact": {
+            "name": "contact",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "contact",
+            "order": 22
+        },
+        "activity": {
+            "name": "activity",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "activity",
+            "order": 23
+        },
+        "statutText": {
+            "name": "statutText",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "statutText",
+            "order": 24
+        },
+        "website": {
+            "name": "website",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "website",
+            "order": 25
+        },
+        "subactivity": {
+            "name": "subactivity",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "subactivity",
+            "order": 26
+        },
+        "legalStatus": {
+            "name": "legalStatus",
+            "type": "string",
+            "typeLabel": "string",
+            "required": false,
+            "id": "legalStatus",
+            "order": 27
+        }
+    }
+
+}

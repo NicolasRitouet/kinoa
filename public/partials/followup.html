@@ -1,0 +1,68 @@
+<ng-header></ng-header>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Suivi - Liste des entreprises avec le statut "Etude en cours"</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="alert alert-info alert-dismissable" ng-show="loading">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <i class="fa fa-spinner fa-spin"></i> {{loading}}
+        </div>
+        <div class="alert alert-danger alert-dismissable" ng-show="error">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Erreur!</strong> {{error}}
+        </div>
+        <div class="alert alert-info alert-dismissable" ng-show="info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Info!</strong> {{info}}
+        </div>
+    </div>
+
+    <table class="table table-striped table-condensed">
+        <thead>
+            <tr>
+                <th class="col-sm-2">Nom de la société</th>
+                <th class="col-sm-4">Suivi</th>
+                <th class="col-sm-1">M/G</th>
+                <th class="col-sm-1">Montant Facture HT</th>
+                <th class="col-sm-1">Numero Facture</th>
+                <th class="col-sm-1">Payé le</th>
+                <th class="col-sm-1">Docs CDIF recus</th>
+                <th class="col-sm-1">Tableau comparatif fait</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="company in companyList">
+                <form name="Company{{company.id}}Update">
+                    <td><a href="#/societes/{{company.id}}">{{company.name}}</a></td>
+                    <td><input type="text" ng-model="company.followup" class="form-control"></td>
+                    <td><input type="text" ng-model="company.mg" class="form-control" size="1" maxlength="1"></td>
+                    <td><input type="text" ng-model="company.invoiceAmount"></td>
+                    <td><input type="text" ng-model="company.invoiceNumber"></td>
+                    <td><input type="text" ng-model="company.invoicePaidOn" datepicker-popup="dd/MM/yyyy" show-weeks="false" show-button-bar="false"></td>
+                    <td><input type="text" ng-model="company.cdifOn" datepicker-popup="dd/MM/yyyy" show-weeks="false" show-button-bar="false"></td>
+                    <td><input type="text" ng-model="company.comparOn" datepicker-popup="dd/MM/yyyy" show-weeks="false" show-button-bar="false"></td>
+                    <td><button class="btn btn-default btn-small" ng-click="updateCompany(company)">Valider</button></td>
+                </form>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total montant facturé {{totalInvoiceAmount}}€</td>
+                <td>Total facture payé {{totalInvoicePaid}}€</td>
+                <td>Total facture restant {{totalInvoiceRestant}}€</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>

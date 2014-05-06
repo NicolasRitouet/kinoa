@@ -1,0 +1,23 @@
+# Deployd
+data/
+.dpd
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Nodejs
+node_modules
+npm-debug.log
+
+# The directory for uploaded files
+/public/temp

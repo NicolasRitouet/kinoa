@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3>Gestion des droits pour l'enterprise {{company.name}}</h3>
+</div>
+<div class="modal-body">
+
+    <table class="table table-condensed">
+        <tr>
+            <th>Utilisateur</th>
+            <th>Aucun droit</th>
+            <th>Droit de lecture</th>
+            <th>Droit d'ecriture</th>
+            <th>Droit d'administration</th>
+        </tr>
+        <tr ng-repeat="user in company.users">
+            <td>{{user.firstname}} {{user.lastname}}</td>
+            <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="0" /></td>
+            <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="1" /></td>
+            <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="2" /></td>
+            <td><input type="radio" name="userRights{{user.id}}" ng-model="user.companytouser.rightsLevel" value="3" /></td>
+        </tr>
+    </table>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
