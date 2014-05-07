@@ -3,7 +3,7 @@ Kinoa::CRM
 
 Description
 -----------
-Kinoa is a CRM built with angularJS and Deployd.
+Kinoa is a CRM built with angularJS and Deployd (currently only in French)
 
 Local use
 -----------
