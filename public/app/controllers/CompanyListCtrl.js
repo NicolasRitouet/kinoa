@@ -91,7 +91,7 @@ angular.module('KinoaApp')
                 var company = companyList[index];
                 $log.log(company);
                 CompaniesService.updateCompany({id:company.id, status: filter.status.id}).then(function(data) {
-                    var infoMessage = "Les entreprises ont été correctement mises à jour."
+                    var infoMessage = "Les entreprises  ont été correctement mises à jour."
                     $scope.info = infoMessage;
                     $scope.search($scope.filter);
                 });
