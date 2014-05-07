@@ -6,7 +6,8 @@ angular.module('KinoaApp', [
         'ngCookies',
         'dpd',
         'underscore',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'pascalprecht.translate'
     ])
     .config(function ($routeProvider) {
         $routeProvider

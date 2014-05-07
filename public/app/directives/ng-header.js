@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('KinoaApp')
-    .directive('ngHeader', function (AuthService, $location, $log) {
+    .directive('ngHeader', function (AuthService, $location, $log, $translate) {
         return {
             templateUrl: 'partials/ng-header.html',
             restrict: 'E',
@@ -9,6 +9,9 @@ angular.module('KinoaApp')
                 scope.isLogged = AuthService.isLogged();
                 scope.user = AuthService.currentUser();
                 scope.isAdmin = AuthService.isAdmin();
+                scope.changeLanguage = function(language) {
+                    $translate.use(language);
+                }
             }
         };
     });

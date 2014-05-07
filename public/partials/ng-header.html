@@ -15,10 +15,10 @@
             <!--<li ng-show="isLogged"><a href="#">Reporter un bug</a></li>-->
             <!--<li ng-show="isAdmin"><a ng-href="#/import">Importer</a></li>-->
             <li ng-show="isAdmin"><a ng-href="#/societes">Liste des entreprises</a></li>
-            <li><a href="#/aide">Aide</a></li>
-            <li><a href="#/suivi">Suivi</a></li>
+            <li><a href="#/aide">{{ 'menu.help' | translate }}</a></li>
+            <li><a href="#/suivi">{{ 'menu.followup' | translate }}</a></li>
             <li class="dropdown" ng-show="isLogged">
-                <a href class="dropdown-toggle" data-toggle="dropdown">Ajouter <b class="caret"></b></a>
+                <a href class="dropdown-toggle" data-toggle="dropdown">{{ 'menu.add' | translate }} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#/societes/new">Ajouter une entreprise</a></li>
                     <li><a href="#/contacts/new">Ajouter un contact</a></li>
@@ -36,7 +36,7 @@
             <button type="submit" class="btn btn-default">Chercher</button>
         </form>-->
         <ul class="nav navbar-nav navbar-right" ng-show="isLogged">
-            <li><a href="#/logout">Deconnexion</a></li>
+            <li><a href="#/logout">{{ 'menu.logout' | translate }}</a></li>
             <li class="dropdown">
                 <a href class="dropdown-toggle" data-toggle="dropdown">{{user.username}} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -47,9 +47,15 @@
                     <li><a href="#/logout">Deconnexion</a></li>
                 </ul>
             </li>
+            <li><a href ng-click="changeLanguage('fr')">{{ 'menu.french' | translate }}</a></li>
+            <li><a href ng-click="changeLanguage('en')">{{ 'menu.english' | translate }}</a></li>
+            <li href ng-if="false"><a ng-click="changeLanguage('de')">{{ 'menu.german' | translate }}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-hide="isLogged">
-            <li><a ng-href="#/login">Connexion</a></li>
+            <li><a ng-href="#/login">{{ 'menu.login' | translate }}</a></li>
+            <li><a href ng-click="changeLanguage('fr')">{{ 'menu.french' | translate }}</a></li>
+            <li><a href ng-click="changeLanguage('en')">{{ 'menu.english' | translate }}</a></li>
+            <li href ng-if="false"><a ng-click="changeLanguage('de')">{{ 'menu.german' | translate }}</a></li>
         </ul>
     </div>
     <!-- /.navbar-collapse -->
