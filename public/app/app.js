@@ -7,7 +7,8 @@ angular.module('KinoaApp', [
         'dpd',
         'underscore',
         'ui.bootstrap',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        'angularFileUpload'
     ])
     .config(function ($routeProvider) {
         $routeProvider

@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('KinoaApp')
-    .controller('CompanyDetailsCtrl', function ($scope, $routeParams, $log, $http, dpd, CountryService, AuthService, ContactsService, _, CompaniesService, EnumService) {
+    .controller('CompanyDetailsCtrl', function ($scope, $routeParams, $log, $http, dpd,
+        CountryService, AuthService, ContactsService,
+        _, CompaniesService, EnumService, $upload) {
 
 
         $scope.loading = "Chargement en cours, merci de patienter...";
@@ -322,6 +324,31 @@ angular.module('KinoaApp')
                 }
             });
         }
+
+        $scope.onFileSelect = function($files) {
+            
+            $scope.loading = "Envoi en cours, merci de patienter...";
+            for (var i = 0; i < $files.length; i++) {
+                var file = $files[i];
+                $scope.upload = $upload.upload({
+                    url: '/upload',
+                    params: {
+                        subdir: companyId,
+                        creator: $scope.currentUser.id
+                    },
+                    file: file
+
+                }).progress(function(evt) {
+                    console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+                }).success(function(data, status, headers, config) {
+                    var infoMessage = "Fichiers correctement uploadés!";
+                    delete $scope.loading;
+                    $log.log(data);
+                    $scope.info = infoMessage;
+                    $scope.uploadedFiles = $scope.uploadedFiles.concat(data);
+                });
+            }
+        };
 
         $scope.getUploadedFiles = function() {
             // Load uploaded files for this company

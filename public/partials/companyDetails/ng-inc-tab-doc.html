@@ -1,9 +1,24 @@
 <h4>Gestion des documents</h4>
-    <input type="file" name="upload" multiple
-           ng-model-instant id="fileToUpload"
-           onchange="angular.element(this).scope().setFiles(this)"><br>
-    <button class="btn btn-primary" ng-click="uploadMultipleFiles()" ng-hide="loading">Envoyer</button>
-    <div ng-show="loading"><h3><i class="fa fa-spinner fa-spin"></i> {{loading}}</h3></div>
+<div class="row">
+    <div class="col-xs-6">
+        <h4>Envoi par drag and drop</h4>
+      <div ng-file-drop="onFileSelect($files)"  class="drop-box" ng-file-drag-over-class="dragover"
+            ng-show="dropSupported">Déplacer les fichiers ici</div>
+      <div ng-file-drop-available="dropSupported=true" 
+            ng-show="!dropSupported">Votre navigateur ne supporte pas le Drag and Drop.</div>
+      <button ng-click="upload.abort()">Annuler l'envoi du fichier</button>
+    </div>
+
+    <div class="col-xs-6">
+        <h4>Envoi par sélection de fichiers</h4>
+        <input type="file" name="upload" multiple
+               ng-model-instant id="fileToUpload"
+               onchange="angular.element(this).scope().setFiles(this)"><br>
+        <button class="btn btn-primary" ng-click="uploadMultipleFiles()" ng-hide="loading">Envoyer</button>
+
+    </div>
+</div>
+<div ng-show="loading"><h3><i class="fa fa-spinner fa-spin"></i> {{loading}}</h3></div>
 <h4>Liste des documents existants</h4>
 Filtre de recherche <input type="text"/>
 <table class="table table-bordered table-condensed table-striped">

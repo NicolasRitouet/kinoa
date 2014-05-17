@@ -20,6 +20,8 @@
     "angular": "~1.2.16",
     "angular-translate": "~2.1.0",
     "angular-cookies": "~1.2.16",
-    "angular-route": "~1.2.16"
+    "angular-route": "~1.2.16",
+    "ng-file-upload": "~1.4.0",
+    "ng-file-upload-shim": "~1.4.0"
   }
 }
