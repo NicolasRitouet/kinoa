@@ -13,61 +13,61 @@ angular.module('KinoaApp', [
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'partials/main.html',
+                templateUrl: 'app/pages/main/main.html',
                 controller: 'MainCtrl',
                 auth: true
             })
             .when('/societes/', {
-                templateUrl: 'partials/companyList.html',
+                templateUrl: 'app/pages/companyList/companyList.html',
                 controller: 'CompanyListCtrl',
                 auth: true,
                 requireAdmin: true
             })
             .when('/societes/new', {
-                templateUrl: 'partials/companyDetails.html',
+                templateUrl: 'app/pages/companyPage/companyPage.html',
                 controller: 'NewCompanyCtrl',
                 auth: true
             })
             .when('/societes/:societeId', {
-                templateUrl: 'partials/companyDetails.html',
+                templateUrl: 'app/pages/companyPage/companyPage.html',
                 controller: 'CompanyDetailsCtrl',
                 auth: true
             })
             .when('/contacts/new', {
-                templateUrl: 'partials/detailsContact.html',
+                templateUrl: 'app/pages/contactPage/detailsContact.html',
                 controller: 'NewContactCtrl',
                 auth: true
             })
             .when('/contacts/:contactId', {
-                templateUrl: 'partials/detailsContact.html',
+                templateUrl: 'app/pages/contactPage/detailsContact.html',
                 controller: 'DetailsContactCtrl',
                 auth: true
             })
             .when('/centreimpots/new', {
-                templateUrl: 'partials/detailsTaxes.html',
+                templateUrl: 'app/pages/taxePage/detailsTaxes.html',
                 controller: 'NewTaxeCtrl',
                 auth: true
             })
             .when('/centreimpots/:taxesId', {
-                templateUrl: 'partials/detailsTaxes.html',
+                templateUrl: 'app/pages/taxePage/detailsTaxes.html',
                 controller: 'DetailsTaxesCtrl',
                 auth: true
             })
             .when('/login', {
-                templateUrl: 'partials/login.html',
+                templateUrl: 'app/pages/login/login.html',
                 controller: 'LoginCtrl'
             })
             .when('/logout', {
-                templateUrl: 'partials/logout.html',
+                templateUrl: 'app/pages/logout/logout.html',
                 controller: 'LogoutCtrl'
             })
             .when('/suivi', {
-                templateUrl: 'partials/followup.html',
+                templateUrl: 'app/pages/followup/followup.html',
                 controller: 'FollowupCtrl',
                 auth: true
             })
             .when('/aide', {
-                templateUrl: 'partials/help.html',
+                templateUrl: 'app/pages/help/help.html',
                 controller: 'HelpCtrl'
             })
             .otherwise({

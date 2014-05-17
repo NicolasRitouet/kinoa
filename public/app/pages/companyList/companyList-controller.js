@@ -146,7 +146,7 @@ angular.module('KinoaApp')
                 { field: "id",
                     displayName: "Ouvrir",
                     width: 50,
-                    cellTemplate: 'partials/companyList/companyListDisplay.html'
+                    cellTemplate: 'app/pages/companyList/companyList/companyListDisplay.html'
                 },
                 { field: "name", displayName: "Nom", width: 400, pinned: true },
                 { field: "address1", displayName: "Adresse", width: 120 },
@@ -175,12 +175,12 @@ angular.module('KinoaApp')
                 { field: "status",
                     displayName: "Statut",
                     width: 200,
-                    cellTemplate: 'partials/companyList/companyListStatusColumn.html'
+                    cellTemplate: 'app/pages/companyList/companyList/companyListStatusColumn.html'
                 },
                 { field: "id",
                     displayName: "Suppression",
                     width: 150,
-                    cellTemplate: 'partials/companyList/companyListDeleteColumn.html'
+                    cellTemplate: 'app/pages/companyList/companyList/companyListDeleteColumn.html'
                 }
             ]
 
@@ -200,7 +200,7 @@ angular.module('KinoaApp')
             }
 
             var modalInstance = $modal.open({
-                templateUrl: 'partials/companyList/companyListRightsModalContent.html',
+                templateUrl: 'app/pages/companyList/companyList/companyListRightsModalContent.html',
                 controller: ModalInstanceCtrl,
                 resolve: {
                     company: function() {

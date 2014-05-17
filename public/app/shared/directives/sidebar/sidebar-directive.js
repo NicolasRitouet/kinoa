@@ -3,7 +3,7 @@
 angular.module('KinoaApp')
     .directive('ngSidebar', function (AuthService, dpd, $log, ContactsService, CompaniesService, $location) {
         return {
-            templateUrl: 'partials/ng-sidebar.html',
+            templateUrl: 'app/shared/directives/sidebar/sidebar.html',
             restrict: 'E',
             link: function ($scope, elem, attrs) {
 

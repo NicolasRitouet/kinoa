@@ -23,6 +23,13 @@ To increase the log level, use this command:
 DEBUG=* dpd -o
 ````
 
+Gulp takes care of concatenating the app. To start it, run:
+````
+cd public
+npm install
+gulp
+````
+
 If you really don't want to install deployd, you can also start the application with nodeJS, but you'll need a running mongoDB with a kinoa DB:
 ````
 npm install
