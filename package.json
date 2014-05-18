@@ -4,8 +4,21 @@
   "author": "Nicolas Ritouet <nicolas@ritouet.com>",
   "version": "0.0.1",
   "dependencies": {
-    "deployd": "^0.6.10",
+    "deployd": "nicolasritouet/deployd",
     "dpd-fileupload": "^0.0.10"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-jshint": "^1.6.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.0",
+    "gulp-rev": "^0.3.2",
+    "gulp-ngmin": "^0.3.0",
+    "gulp-shell": "^0.2.5",
+    "gulp-nodemon": "^1.0.2",
+    "gulp-spawn": "^0.3.0",
+    "gulp-open": "^0.2.8"
   },
   "scripts": {
     "start_dpd": "node node_modules/deployd/bin/dpd"
