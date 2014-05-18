@@ -36,23 +36,22 @@ gulp.task('js', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('./public/app/**/*.js', ['lint', 'js']);
+    return gulp.watch('./public/app/**/*.js', ['lint', 'js']);
     // gulp.watch('scss/*.scss', ['sass']);
 });
 
 // start mongodb
-gulp.task('mongodb', shell.task([
-  'echo "start mongodb"',
-  'mongod'
-]));
+gulp.task('mongodb', function() {
+    return shell.task([
+      'echo "start mongodb"',
+      'mongod'
+    ]);
+});
 
 // start deployd
 gulp.task('server', function () {
-  nodemon({ script: 'index.js', ext: 'html js', ignore: ['./public/**'],  })
-    .on('change', ['lint'])
-    .on('restart', function () {
-      console.log('restarted!')
-    });
+  return nodemon({ script: 'index.js', ext: 'html js', ignore: ['./public/**'],  })
+    .on('change', ['lint']);
 });
 
 // open browser
@@ -60,7 +59,7 @@ gulp.task('open', function() {
   var options = {
     url: "http://localhost:3000"
   };
-  gulp.src("./index.html")
+  return gulp.src("./index.html")
     .pipe(open("", options));
 });
 

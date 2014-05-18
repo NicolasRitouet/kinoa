@@ -2,46 +2,49 @@ Kinoa::CRM
 =======
 ![Codeship.io](https://www.codeship.io/projects/9900cea0-b910-0131-2051-6e04503967cb/status)
 
-Description
------------
-Kinoa is a CRM built with angularJS and Deployd (currently only in French)
+## Description
 
-Local use
------------
-Deployd is required to make it run, you can install the binaries here:
-http://deployd.com/
-It will install deployd globally with an embedded MongoDB.
+Kinoa is a CRM built with angularJS and Deployd.
+
+## Local use
+
+Deployd is required to make it run. Because of this [bug](https://github.com/deployd/deployd/pull/240), we can't use a deployd custom resource (dpd-fileupload) and some other node moduls (like Gulp), therefore, I made a [fork](https://github.com/NicolasRitouet/deployd/commit/f0c4d45e2edbf5f4df7ac17c8a26d19b8a9aa66c) to fix this issue.  
+The package.json uses my fork for deployd.
+
+### Requirements
+[MongoDB is needed](http://docs.mongodb.org/manual/installation/).  
+A gulp task will start mongodb (on macosx only currently).
 
 ````bash
 git clone https://github.com/NicolasRitouet/kinoa.git
 cd kinoa
 npm install
-dpd -d # Opens the dashboard to add a user
-````
-To increase the log level, use this command:
-````
-DEBUG=* dpd -o
-````
-
-Gulp takes care of concatenating the app. To start it, run:
-````
-cd public
-npm install
 gulp
 ````
+### Create a user
+When starting the app for the first time, you'll need to add a user:  
 
-If you really don't want to install deployd, you can also start the application with nodeJS, but you'll need a running mongoDB with a kinoa DB:
+- comment the first line of the file /resources/users/post.js:  
+````// cancelUnless(me, "You must be logged in to create a contact", 401);````
+- start the app (by running ````gulp````)
+- make a post call to this endpoint: ````http://localhost:3000/users```` with these parameters:
 ````
-npm install
-node .
+{
+    username: 'yourusername',
+    password: 'yourpassword',
+    firstname: 'John',
+    lastname: 'Doe',
+    roles: ["admin"]
+}
 ````
-Open http://localhost:3000/dashboard to add a user and use the application.
+I plan to simplify this process as soon as possible.
+
+Open [http://localhost:3000/](http://localhost:3000/) to use the application.
 
 
-TODO
----
+## TODO
+
 - internationalize Kinoa (because not everybody speaks french!)
 - add tests
 - add CI with Wercker
-- add grunt (or gulps) support: minification and concatenation
 - make the CRM more generic (remove tax centers)
