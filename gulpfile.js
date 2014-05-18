@@ -11,6 +11,7 @@ var ngmin   = require('gulp-ngmin');
 var shell   = require('gulp-shell');
 var nodemon = require('gulp-nodemon');
 var open    = require("gulp-open");
+var karma   = require('gulp-karma');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -51,7 +52,8 @@ gulp.task('mongodb', function() {
 // start deployd
 gulp.task('server', function () {
   return nodemon({ script: 'index.js', ext: 'html js', ignore: ['./public/**']  })
-    .on('change', ['lint']);
+    .on('change', ['lint'])
+    .pipe();
 });
 
 // open browser
