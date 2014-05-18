@@ -7,11 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
+    <!-- build:css -->
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/ng-grid.css">
     <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+    <!-- endbuild -->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -31,7 +32,8 @@
     </div>
 
 
-    <!-- Le javascript -->
+
+    <!-- Third parties -->
     <script src="lib/jquery.js"></script>
     <script src="lib/lodash.js"></script>
     <!-- Used for modal (detailsSociete) and tabs): -->
@@ -57,54 +59,7 @@
 
 
     <!-- The application -->
-    <script src="app/app.js"></script>
-    <script src="app/translate.js"></script>
-    <script src="app/controllers/MainCtrl.js"></script>
-    <script src="app/controllers/LoginCtrl.js"></script>
-    <script src="app/controllers/LogoutCtrl.js"></script>
-    <script src="app/controllers/CompanyDetailsCtrl.js"></script>
-    <script src="app/controllers/detailsContact.js"></script>
-    <script src="app/controllers/NewCompanyCtrl.js"></script>
-    <script src="app/controllers/CompanyListCtrl.js"></script>
-    <script src="app/controllers/NewContactCtrl.js"></script>
-    <script src="app/controllers/DetailsTaxesCtrl.js"></script>
-    <script src="app/controllers/NewTaxeCtrl.js"></script>
-    <script src="app/controllers/HelpCtrl.js"></script>
-    <script src="app/controllers/FollowupCtrl.js"></script>
-
-
-    <script src="app/directives/ng-footer.js"></script>
-    <script src="app/directives/ng-header.js"></script>
-    <script src="app/directives/ng-sidebar.js"></script>
-    <script src="app/directives/ng-scrollfollow.js"></script>
-    <script src="app/directives/ng-multiselect.js"></script>
-
-    <script src="app/services/EnumService.js"></script>
-    <script src="app/services/CountryService.js"></script>
-    <script src="app/services/WeatherService.js"></script>
-    <script src="app/services/AuthService.js"></script>
-    <script src="app/services/ContactsService.js"></script>
-    <script src="app/services/CompaniesService.js"></script>
-
-    <script src="app/filters/Filters.js"></script>
-
-    <!-- Google Analytics. -->
-    <script>
-        (function (b, o, i, l, e, r) {
-            b.GoogleAnalyticsObject = l;
-            b[l] || (b[l] =
-                    function () {
-                        (b[l].q = b[l].q || []).push(arguments)
-                    });
-            b[l].l = +new Date;
-            e = o.createElement(i);
-            r = o.getElementsByTagName(i)[0];
-            e.src = '//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e, r)
-        }(window, document, 'script', 'ga'));
-        ga('create', 'UA-46591333-1');
-        ga('send', 'pageview');
-    </script>
+    <script src="dist/kinoa.js"></script>
 
 </body>
 </html>

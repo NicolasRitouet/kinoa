@@ -3,7 +3,7 @@
 angular.module('KinoaApp')
     .directive('ngFooter', function () {
         return {
-            templateUrl: 'partials/ng-footer.html',
+            templateUrl: 'app/shared/directives/footer/footer.html',
             restrict: 'E'
         };
     });

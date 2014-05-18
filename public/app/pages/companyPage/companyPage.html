@@ -17,6 +17,7 @@
                             ng-click="changeCompanyVip(false, societe)">
                         <span class="glyphicon glyphicon-star"></span> important
                     </button>
+                    
 
                     <div class="btn-group pull-right" ng-show="currentUser.isAdmin()">
                         <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown">
@@ -98,53 +99,53 @@
                 <!-- DEBUT INFORMATIONS SOCIETE -->
                 <div class="tab-content">
                     <div class="tab-pane active well" id="informationsSociete"
-                         ng-include="'partials/companyDetails/ng-inc-tab-info.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-tab-info.html'">
                     </div>
                     <!-- FIN INFORMATIONS SOCIETE -->
 
 
                     <!-- BEGIN CONTACT TAB -->
                     <div class="tab-pane well" id="contactsSociete"
-                         ng-include="'partials/companyDetails/ng-inc-tab-contact.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-tab-contact.html'">
                     </div>
                     <!-- END CONTACT TAB -->
 
 
                     <!-- BEGIN TAXES TAB -->
                     <div class="tab-pane well" id="taxes"
-                         ng-include="'partials/companyDetails/ng-inc-tab-taxes.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-tab-taxes.html'">
                     </div>
                     <!-- END CONTACT TAB -->
 
                     <!-- BEGIN DOCUMENTS TAB -->
                     <div class="tab-pane well " id="documentsSociete"
-                         ng-include="'partials/companyDetails/ng-inc-tab-doc.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-tab-doc.html'">
 
                     </div>
                     <!-- END DOCUMENT TAB -->
 
                     <!-- BEGIN HISTORIC TAB -->
                     <div class="tab-pane well" id="todoSociete"
-                         ng-include="'partials/companyDetails/ng-inc-tab-todo.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-tab-todo.html'">
                     </div>
                     <!-- END HISTORIC TAB -->
 
                     <!-- BEGIN FOLLOWING TAB -->
                     <div class="tab-pane well" id="suiviSociete"
-                         ng-include="'partials/companyDetails/ng-inc-tab-following.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-tab-following.html'">
                     </div>
                     <!-- END FOLLOWING TAB -->
 
                     <!-- BEGIN MODAL HISTORY -->
                     <div class="modal fade" role="dialog" id="modal-historique"
-                         ng-include="'partials/companyDetails/ng-inc-modal-historique.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-modal-historique.html'">
                     </div>
                     <!-- END MODAL HISTORY -->
 
 
                     <!-- BEGIN MODAL CONTACTS -->
                     <div class="modal fade" role="dialog" id="modal-contacts"
-                         ng-include="'partials/companyDetails/ng-inc-modal-contact.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-modal-contact.html'">
                     </div>
                     <!-- /.modal -->
                     <!-- END MODAL CONTACTS -->
@@ -152,7 +153,7 @@
 
                     <!-- BEGIN MODAL TAXES -->
                     <div class="modal fade" role="dialog" id="modal-taxes"
-                         ng-include="'partials/companyDetails/ng-inc-modal-taxes.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-modal-taxes.html'">
                     </div>
                     <!-- /.modal -->
                     <!-- END MODAL TAXES -->
@@ -160,7 +161,7 @@
 
                     <!-- BEGIN MODAL TODOS -->
                     <div class="modal fade" role="dialog" id="modal-todos"
-                         ng-include="'partials/companyDetails/ng-inc-modal-todo.html'">
+                         ng-include="'app/pages/companyPage/companyDetails/ng-inc-modal-todo.html'">
                     </div>
                     <!-- /.modal -->
                     <!-- END MODAL TODOS -->
