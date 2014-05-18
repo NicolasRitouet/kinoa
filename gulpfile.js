@@ -42,15 +42,15 @@ gulp.task('watch', function() {
 
 // start mongodb
 gulp.task('mongodb', function() {
-    return shell.task([
-      'echo "start mongodb"',
-      'mongod'
-    ]);
+    return gulp.src('')
+        .pipe(shell([
+          'exec scripts/startMongodb.sh'
+        ]));
 });
 
 // start deployd
 gulp.task('server', function () {
-  return nodemon({ script: 'index.js', ext: 'html js', ignore: ['./public/**'],  })
+  return nodemon({ script: 'index.js', ext: 'html js', ignore: ['./public/**']  })
     .on('change', ['lint']);
 });
 
@@ -59,7 +59,7 @@ gulp.task('open', function() {
   var options = {
     url: "http://localhost:3000"
   };
-  return gulp.src("./index.html")
+  return gulp.src("./public/index.html")
     .pipe(open("", options));
 });
 
