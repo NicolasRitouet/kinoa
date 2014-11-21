@@ -1,5 +1,6 @@
 Kinoa::CRM
 =======
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/NicolasRitouet/kinoa?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![Codeship.io](https://www.codeship.io/projects/9900cea0-b910-0131-2051-6e04503967cb/status)
 
 ## Description
