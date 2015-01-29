@@ -2,6 +2,8 @@
 data/
 .dpd
 
+
+
 # Eclipse
 .classpath
 .project
@@ -21,3 +23,5 @@ npm-debug.log
 
 # The directory for uploaded files
 /public/temp
+/public/dist
+/public/bower_components

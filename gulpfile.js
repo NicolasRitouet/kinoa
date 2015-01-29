@@ -52,8 +52,7 @@ gulp.task('mongodb', function() {
 // start deployd
 gulp.task('server', function () {
   return nodemon({ script: 'index.js', ext: 'html js', ignore: ['./public/**']  })
-    .on('change', ['lint'])
-    .pipe();
+    .on('change', ['lint']);
 });
 
 // open browser

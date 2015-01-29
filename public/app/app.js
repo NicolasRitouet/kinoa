@@ -77,7 +77,6 @@ angular.module('KinoaApp', [
         $provide.decorator("$exceptionHandler", function($delegate, $window) {
             return function(exception, cause) {
                 $delegate(exception, cause);
-                alert("Une erreur vient de se produire, merci de noter la date et l'heure et d'envoyer un message à Nicolas.");
                 console.log("Exception: ", exception);
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', '/errors', true);

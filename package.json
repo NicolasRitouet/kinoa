@@ -4,7 +4,7 @@
   "author": "Nicolas Ritouet <nicolas@ritouet.com>",
   "version": "0.0.1",
   "dependencies": {
-    "deployd": "nicolasritouet/deployd",
+    "deployd": "deployd/deployd",
     "dpd-fileupload": "^0.0.10"
   },
   "devDependencies": {
