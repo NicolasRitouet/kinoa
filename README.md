@@ -1,6 +1,6 @@
 Kinoa::CRM
 =======
-[![Codeship.io](https://www.codeship.io/projects/20757/status)](https://www.codeship.io)
+[![Codeship.io](https://www.codeship.io/projects/9900cea0-b910-0131-2051-6e04503967cb/status)](https://www.codeship.io)
 
 ## Description
 
