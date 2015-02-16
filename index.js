@@ -3,7 +3,7 @@ var deployd = require('deployd'),
 
 var server = deployd({
     port: process.env.PORT || 3000,
-    env: 'staging',
+    env: 'development',
     db: {
         host: 'localhost',
         port: 27017,

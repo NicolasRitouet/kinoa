@@ -1,5 +1,5 @@
 // Include gulp
-var gulp    = require('gulp'); 
+var gulp    = require('gulp');
 
 // Include Our Plugins
 var jshint  = require('gulp-jshint');
@@ -7,7 +7,7 @@ var concat  = require('gulp-concat');
 var uglify  = require('gulp-uglify');
 var rename  = require('gulp-rename');
 var rev     = require('gulp-rev');
-var ngmin   = require('gulp-ngmin');
+var ngmin   = require('gulp-ng-annotate');
 var shell   = require('gulp-shell');
 var nodemon = require('gulp-nodemon');
 var open    = require("gulp-open");
