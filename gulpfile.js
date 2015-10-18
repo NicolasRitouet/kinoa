@@ -11,7 +11,6 @@ var ngmin   = require('gulp-ng-annotate');
 var shell   = require('gulp-shell');
 var nodemon = require('gulp-nodemon');
 var open    = require("gulp-open");
-var karma   = require('gulp-karma');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -62,6 +61,18 @@ gulp.task('open', function() {
   };
   return gulp.src("./public/index.html")
     .pipe(open("", options));
+});
+
+var Server = require('karma').Server;
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 /* DEFAULT TASK */

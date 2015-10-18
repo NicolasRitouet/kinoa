@@ -15,7 +15,6 @@
     "gulp": "^3.6.2",
     "gulp-concat": "^2.2.0",
     "gulp-jshint": "^1.6.1",
-    "gulp-karma": "0.0.4",
     "gulp-ng-annotate": "^0.5.2",
     "gulp-nodemon": "^1.0.2",
     "gulp-open": "^0.2.8",

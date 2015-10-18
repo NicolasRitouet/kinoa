@@ -12,7 +12,7 @@ var server = deployd({
 });
 
 server.listen();
-console.log('Express server listening on http://' + os.hostname() + ":" + server.options.port + " with DB " + server.options.db.host + "/" + server.options.db.name);
+console.log('Server listening on http://' + os.hostname() + ":" + server.options.port + " with DB " + server.options.db.host + "/" + server.options.db.name);
 
 
 server.on('error', function (err) {
