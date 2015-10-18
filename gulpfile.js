@@ -1,3 +1,4 @@
+'use strict';
 // Include gulp
 var gulp    = require('gulp');
 
@@ -6,11 +7,11 @@ var jshint  = require('gulp-jshint');
 var concat  = require('gulp-concat');
 var uglify  = require('gulp-uglify');
 var rename  = require('gulp-rename');
-var rev     = require('gulp-rev');
 var ngmin   = require('gulp-ng-annotate');
 var shell   = require('gulp-shell');
 var nodemon = require('gulp-nodemon');
-var open    = require("gulp-open");
+var openAfterStart    = require('gulp-open');
+var Server  = require('karma').Server;
 
 // Lint Task
 gulp.task('lint', function() {
@@ -57,10 +58,10 @@ gulp.task('server', function () {
 // open browser
 gulp.task('open', function() {
   var options = {
-    url: "http://localhost:3000"
+    url: 'http://localhost:3000'
   };
-  return gulp.src("./public/index.html")
-    .pipe(open("", options));
+  return gulp.src('./public/index.html')
+    .pipe(openAfterStart('', options));
 });
 
 var Server = require('karma').Server;
