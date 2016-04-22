@@ -12,7 +12,7 @@
     "dpd-fileupload": "^0.0.15"
   },
   "devDependencies": {
-    "gulp": "^3.6.2",
+    "gulp": "^3.9.0",
     "gulp-concat": "^2.2.0",
     "gulp-jshint": "^1.6.1",
     "gulp-ng-annotate": "^2.0.0",
