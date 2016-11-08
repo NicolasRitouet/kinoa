@@ -16,7 +16,7 @@
     "gulp-concat": "^2.2.0",
     "gulp-jshint": "^1.6.1",
     "gulp-ng-annotate": "^2.0.0",
-    "gulp-nodemon": "^2.0.4",
+    "gulp-nodemon": "^2.2.0",
     "gulp-open": "^2.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-shell": "^0.5.0",
