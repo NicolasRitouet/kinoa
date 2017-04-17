@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "deployd": "~0.8.0",
-    "dpd-fileupload": "^0.0.15"
+    "dpd-fileupload": "^0.0.16"
   },
   "devDependencies": {
     "gulp": "^3.6.2",
