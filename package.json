@@ -8,7 +8,7 @@
     "url": "https://github.com/NicolasRitouet/kinoa.git"
   },
   "dependencies": {
-    "deployd": "~0.8.0",
+    "deployd": "~0.8.9",
     "dpd-fileupload": "^0.0.15"
   },
   "devDependencies": {
